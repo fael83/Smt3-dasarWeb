@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html">
+<head>
+    <title>Fitness Center Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fitness Center Registration</h1>
+        <form id="registrationForm">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="contoh@gmail.com">
+
+            <label for="noHP">Nomor HP</label>
+            <input type="tel" id="noHP" name="noHP" placeholder="+62 896 7834 3160">
+
+            <label">Jenis Kelamin</label>
+            <div class="radio-group">
+                <label><input type="radio" name="jenisKelamin" value="Laki-Laki">Laki-Laki</label>
+                <label><input type="radio" name="jenisKelamin" value="Perempuan">Perempuan</label>
+            </div><br>
+
+            <label for="program">Pilih Program Latihan</label>
+            <select id="program" name="program">
+                <option value="">Pilih Program</option>
+                <option value="Latihan Beban">Latihan Beban</option>
+                <option value="Fitness Kardio">Fitness Kardio</option>
+                <option value="Pemanasan & Yoga">Pemanasan & Yoga</option>
+                <option value="Pelatih Pribadi">Pelatih Pribadi</option>
+            </select><br>
+
+            <label for="tujuan">Tujuan Fitness</label><br>
+            <textarea id="tujuan" name="tujuan" rows="3" placeholder="Menurunkan berat badan, Menambah otot, dll"></textarea>
+
+            <div class="button-wrapper">
+            <button type="submit">Registrasi Sekarang</button>
+            </div>
+        </form>
+
+        <div class="hasil" id="hasil">
+        <h2>Hasil Registrasi</h2>
+        <p><b>Nama:</b> <span id="rNama"></span></p>
+        <p><b>Email:</b> <span id="rEmail"></span></p>
+        <p><b>No HP:</b> <span id="rNoHP"></span></p>
+        <p><b>Jenis Kelamin:</b> <span id="rJenisKelamin"></span></p>
+        <p><b>Program:</b> <span id="rProgram"></span></p>
+        <p><b>Tujuan:</b> <span id="rTujuan"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
