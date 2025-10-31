@@ -1,24 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("registrationForm");
-    const result = document.getElementById("hasil");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("registrationForm");
+  const successMsg = document.getElementById("successMessage");
 
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
+  successMsg.style.display = "none";
 
-        const nama = document.getElementById("nama").value;
-        const email = document.getElementById("email").value;
-        const noHP = document.getElementById("noHP").value;
-        const jenisKelamin = document.querySelector('input[name="jenisKelamin"]:checked').value;
-        const program = document.getElementById("program").value;
-        const tujuan = document.getElementById("tujuan").value;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        document.getElementById("rNama").textContent = nama;
-        document.getElementById("rEmail").textContent = email;
-        document.getElementById("rNoHP").textContent = noHP;
-        document.getElementById("rJenisKelamin").textContent = jenisKelamin;
-        document.getElementById("rProgram").textContent = program;
-        document.getElementById("rTujuan").textContent = tujuan;
+    const btn = form.querySelector("button");
+    btn.textContent = "Mengirim...";
+    btn.disabled = true;
 
-        result.style.display = "block";
-    });
+    setTimeout(() => {
+      form.reset();
+      btn.textContent = "Registrasi Sekarang";
+      btn.disabled = false;
+
+      successMsg.style.display = "block";
+      successMsg.scrollIntoView({ behavior: "smooth" });
+
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 5000);
+    }, 1500);
+  });
 });

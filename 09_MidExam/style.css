@@ -1,97 +1,169 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1e1f26, #292b36, #444654);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120vh;
-    margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 60px 15px;
 }
 
 .container {
-    background: #2f3241;
-    border-radius: 20px;
-    padding: 40px 50px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    width: 420px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 40px 45px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 520px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: greenyellow;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #8efb5a;
+  font-size: 24px;
+  letter-spacing: 0.5px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 label {
-    font-weight: 600;
-    font-size: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
 }
 
-input, select, textarea {
-    background: #3b3e4f;
-    padding: 10px 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 14px;
-    transition: background 0.3s, transform 0.2s;
+input,
+select,
+textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 11px 13px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  transition: all 0.25s ease;
 }
 
-select option {
-    color: whitesmoke;
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8efb5a;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .radio-group {
-    display: flex;
-    font-size: 14px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 
-button {
-    background: greenyellow;
-    color: black;
-    border: none;
-    padding: 12px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-    text-align: right;
+.radio-group label {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.two-column {
+  display: flex;
+  gap: 15px;
+}
+
+.two-column > div {
+  flex: 1;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.checkbox-group input {
+  width: auto;
 }
 
 .button-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.footer-text {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 12px;
-    color: lightblue;
+button {
+  background: linear-gradient(90deg, #8efb5a, #6ce85d);
+  color: #000;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.hasil {
-    margin-top: 25px;
-    padding: 15px;
-    background: #f5f8ff;
-    border-radius: 10px;
-    display: none;
-    border-left: 6px solid #002661;
-    animation: fadeIn 0.6s ease-in-out;
-    color: #1e1f26;
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(142, 251, 90, 0.4);
 }
 
-.hasil h2 {
-    color: black;
-    text-align: center;
-    margin-bottom: 15px;
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success-message {
+  text-align: center;
+  background: rgba(142, 251, 90, 0.1);
+  color: #8efb5a;
+  border: 1px solid #8efb5a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 25px;
+  display: none;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .two-column {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
 }

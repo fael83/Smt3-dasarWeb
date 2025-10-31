@@ -1,56 +1,107 @@
 <!DOCTYPE html>
-<html">
+<html>
 <head>
-    <title>Fitness Center Registration Form</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Fitness Center Registration Formr</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Fitness Center Registration</h1>
-        <form id="registrationForm">
-            <label for="nama">Nama Lengkap</label>
-            <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap">
+  <div class="container">
+    <h1>Fitness Center Registration Form</h1>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="contoh@gmail.com">
+    <form id="registrationForm">
+      <div>
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+      </div>
 
-            <label for="noHP">Nomor HP</label>
-            <input type="tel" id="noHP" name="noHP" placeholder="+62 896 7834 3160">
-
-            <label">Jenis Kelamin</label>
-            <div class="radio-group">
-                <label><input type="radio" name="jenisKelamin" value="Laki-Laki">Laki-Laki</label>
-                <label><input type="radio" name="jenisKelamin" value="Perempuan">Perempuan</label>
-            </div><br>
-
-            <label for="program">Pilih Program Latihan</label>
-            <select id="program" name="program">
-                <option value="">Pilih Program</option>
-                <option value="Latihan Beban">Latihan Beban</option>
-                <option value="Fitness Kardio">Fitness Kardio</option>
-                <option value="Pemanasan & Yoga">Pemanasan & Yoga</option>
-                <option value="Pelatih Pribadi">Pelatih Pribadi</option>
-            </select><br>
-
-            <label for="tujuan">Tujuan Fitness</label><br>
-            <textarea id="tujuan" name="tujuan" rows="3" placeholder="Menurunkan berat badan, Menambah otot, dll"></textarea>
-
-            <div class="button-wrapper">
-            <button type="submit">Registrasi Sekarang</button>
-            </div>
-        </form>
-
-        <div class="hasil" id="hasil">
-        <h2>Hasil Registrasi</h2>
-        <p><b>Nama:</b> <span id="rNama"></span></p>
-        <p><b>Email:</b> <span id="rEmail"></span></p>
-        <p><b>No HP:</b> <span id="rNoHP"></span></p>
-        <p><b>Jenis Kelamin:</b> <span id="rJenisKelamin"></span></p>
-        <p><b>Program:</b> <span id="rProgram"></span></p>
-        <p><b>Tujuan:</b> <span id="rTujuan"></span></p>
+      <div class="two-column">
+        <div>
+          <label for="umur">Umur</label>
+          <input type="number" id="umur" name="umur" placeholder="18" min="10" required>
         </div>
-    </div>
+        <br>
+        <div>
+          <label for="noHP">Nomor HP</label>
+          <input type="tel" id="noHP" name="noHP" placeholder="+62 812 3456 7890" required>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="contoh@gmail.com" required>
+      </div>
+
+      <div>
+        <label>Jenis Kelamin</label>
+        <div class="radio-group">
+          <label><input type="radio" name="jenisKelamin" value="Laki-Laki" required> Laki-Laki</label>
+          <label><input type="radio" name="jenisKelamin" value="Perempuan"> Perempuan</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" name="alamat" rows="2" placeholder="Jl. Merdeka No. 10, Surabaya" required></textarea>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <label for="berat">Berat Badan (kg)</label>
+          <input type="number" id="berat" name="berat" placeholder="65" min="30" required>
+        </div>
+        <br>
+        <div>
+          <label for="tinggi">Tinggi Badan (cm)</label>
+          <input type="number" id="tinggi" name="tinggi" placeholder="170" min="100" required>
+        </div>
+      </div>
+
+      <div>
+        <label for="program">Pilih Program Latihan</label>
+        <select id="program" name="program" required>
+          <option value="">-- Pilih Program --</option>
+          <option value="Latihan Beban">Latihan Beban</option>
+          <option value="Fitness Kardio">Fitness Kardio</option>
+          <option value="Yoga & Stretching">Yoga & Stretching</option>
+          <option value="Pelatih Pribadi">Pelatih Pribadi</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="paket">Jenis Keanggotaan</label>
+        <select id="paket" name="paket" required>
+          <option value="">-- Pilih Paket --</option>
+          <option value="Bulanan">Bulanan - Rp300.000</option>
+          <option value="3 Bulan">3 Bulan - Rp800.000</option>
+          <option value="Tahunan">Tahunan - Rp2.800.000</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="pembayaran">Metode Pembayaran</label>
+        <select id="pembayaran" name="pembayaran" required>
+          <option value="">-- Pilih Metode --</option>
+          <option value="Transfer Bank">Transfer Bank</option>
+          <option value="E-Wallet (OVO/DANA/Gopay)">E-Wallet (OVO/DANA/Gopay)</option>
+          <option value="Tunai di Tempat">Tunai di Tempat</option>
+        </select>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="syarat" required>
+        <label for="syarat">Saya menyetujui syarat & ketentuan Fitness Center</label>
+      </div>
+
+      <div class="button-wrapper">
+        <button type="submit">Registrasi Sekarang</button>
+      </div>
+    </form>
+
+    <div class="success-message" id="successMessage">
+    Pendaftaran berhasil! Kami akan menghubungi Anda untuk konfirmasi.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
